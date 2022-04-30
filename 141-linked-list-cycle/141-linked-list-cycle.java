@@ -10,8 +10,7 @@
  * }
  */
 public class Solution {
-    public boolean hasCycle(ListNode head) {
-        ListNode current = head;
+    public boolean hasCycle(ListNode current) {
         HashSet<ListNode> set = new HashSet<>();
         while(current != null){
             if(set.contains(current)) return true;
