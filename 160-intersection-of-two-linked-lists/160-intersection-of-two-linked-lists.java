@@ -14,21 +14,18 @@ public class Solution {
         ListNode currentA = headA;
         ListNode currentB = headB;
         HashSet<ListNode> set = new HashSet<>();
-        while(currentA != null || currentB != null){
-            if(set.contains(currentA)){
-                if(currentA != null) return currentA;
-            }
-            else{
-                set.add(currentA);
-            }
+        while(currentA != null){
+            set.add(currentA);
+            currentA = currentA.next;
+        }
+        while(currentB != null){
             if(set.contains(currentB)){
-                if(currentB != null) return currentB;
+                return currentB;
             }
             else{
                 set.add(currentB);
             }
-            if(currentA != null) currentA = currentA.next;
-            if(currentB != null) currentB = currentB.next;
+            currentB = currentB.next;
         }
         return null;
     }
