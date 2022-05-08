@@ -14,6 +14,7 @@ class Solution {
             }
             else two.append(t.charAt(i));
         }
-        return one.toString().equals(two.toString());
+        if(one.compareTo(two) == 0) return true;
+        else return false;
     }   
 }
